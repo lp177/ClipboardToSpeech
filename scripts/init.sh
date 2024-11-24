@@ -5,7 +5,7 @@ read_files()
     reading_path=/tmp/reading/$(date +%s)
     cat /tmp/input/* > $reading_path
     rm /tmp/input/*
-    cat $reading_path | piper --model /tmp/langs/fr_FR-siwis-medium.onnx --output-raw | PULSE_SERVER="unix:/pulseaudio/socket" aplay -r 22050 -f S16_LE -t raw -
+    cat $reading_path | piper --model /tmp/langs/fr_FR-upmc-medium.onnx --output-raw | PULSE_SERVER="unix:/pulseaudio/socket" aplay -r 22050 -f S16_LE -t raw -
     rm $reading_path
     echo "End of reading"
 }
